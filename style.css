@@ -50,9 +50,13 @@ header {
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 24px;
-  font-weight: 800;
-  color: var(--text-dark);
+}
+
+.logo-icon {
+  width: 100px;
+  height: 100px;
 }
 
 /* Categories Navigator */
