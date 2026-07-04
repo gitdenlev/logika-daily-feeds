@@ -1,33 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Logika Daily Feeds - Your ultimate portal for the latest global news, technology updates, financial analysis, sports highlights, and scientific discoveries." />
+    <meta
+      name="description"
+      content="Logika Daily Feeds - Your ultimate portal for the latest global news, technology updates, financial analysis, sports highlights, and scientific discoveries."
+    />
     <title>Logika Daily Feeds</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="app-layout">
-
       <!-- Header -->
       <header>
         <div class="logo">
-          <h4>Logika Daily Feeds</h4>
+          <img class="logo-icon" src="logo.svg" alt="Logo" />
         </div>
         <nav class="navigator-wrapper">
           <ul class="navigator">
-            <li><a href="#" class="category-link active" data-category="general">Головне</a></li>
-            <li><a href="#" class="category-link" data-category="technology">Технології</a></li>
-            <li><a href="#" class="category-link" data-category="economy">Бізнес</a></li>
-            <li><a href="#" class="category-link" data-category="sports">Спорт</a></li>
-            <li><a href="#" class="category-link" data-category="science">Наука</a></li>
-            <li><a href="#" class="category-link" data-category="world">Світ</a></li>
+            <li>
+              <a href="#" class="category-link active" data-category="general"
+                >Головне</a
+              >
+            </li>
+            <li>
+              <a href="#" class="category-link" data-category="technology"
+                >Технології</a
+              >
+            </li>
+            <li>
+              <a href="#" class="category-link" data-category="economy"
+                >Бізнес</a
+              >
+            </li>
+            <li>
+              <a href="#" class="category-link" data-category="sports">Спорт</a>
+            </li>
+            <li>
+              <a href="#" class="category-link" data-category="science"
+                >Наука</a
+              >
+            </li>
+            <li>
+              <a href="#" class="category-link" data-category="world">Світ</a>
+            </li>
             <!-- More categories dropdown -->
             <li class="nav-dropdown-item">
               <button class="nav-dropdown-toggle" id="nav-more-toggle">
                 Ще
-                <svg class="nav-dropdown-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg
+                  class="nav-dropdown-arrow"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </button>
@@ -44,7 +76,11 @@
                 <a href="#" class="nav-dropdown-link" data-category="health">
                   <span class="nav-dropdown-icon">❤️</span>Здоров'я
                 </a>
-                <a href="#" class="nav-dropdown-link" data-category="entertainment">
+                <a
+                  href="#"
+                  class="nav-dropdown-link"
+                  data-category="entertainment"
+                >
                   <span class="nav-dropdown-icon">🎬</span>Розваги
                 </a>
               </div>
@@ -59,11 +95,27 @@
         <div class="button">
           <form id="search-form" class="search-form">
             <div class="search-input-wrapper">
-              <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                class="search-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
-              <input type="text" id="search-input" placeholder="Знайдіть новини за ключовими словами" autocomplete="off" />
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Знайдіть новини за ключовими словами"
+                autocomplete="off"
+              />
             </div>
             <button type="submit">Шукати новини</button>
           </form>
@@ -75,9 +127,13 @@
         <div class="section-header">
           <div class="title-area">
             <h2 class="section-title">Останні новини</h2>
-            <span id="active-filter-badge" class="active-filter-badge">Головне</span>
+            <span id="active-filter-badge" class="active-filter-badge"
+              >Головне</span
+            >
           </div>
-          <span class="results-count" id="results-count">Показано 0 статей</span>
+          <span class="results-count" id="results-count"
+            >Показано 0 статей</span
+          >
         </div>
 
         <!-- Loader -->
@@ -89,7 +145,10 @@
         <!-- Error Container -->
         <div id="error-message" class="error-container hidden">
           <div class="error-icon">⚠️</div>
-          <p id="error-text">Не вдалося завантажити новини. Перевірте з'єднання з мережею або спробуйте ще раз.</p>
+          <p id="error-text">
+            Не вдалося завантажити новини. Перевірте з'єднання з мережею або
+            спробуйте ще раз.
+          </p>
         </div>
 
         <!-- News Grid -->
@@ -98,8 +157,28 @@
         </div>
 
         <!-- Load More Button Container -->
-        <div id="load-more-container" class="load-more-container hidden" style="text-align: center; margin-top: 2rem; margin-bottom: 2rem;">
-          <button id="load-more-btn" class="load-more-btn" style="padding: 10px 20px; background-color: #6C5CE7; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: 600; transition: background-color 0.3s ease;">Завантажити ще</button>
+        <div
+          id="load-more-container"
+          class="load-more-container hidden"
+          style="text-align: center; margin-top: 2rem; margin-bottom: 2rem"
+        >
+          <button
+            id="load-more-btn"
+            class="load-more-btn"
+            style="
+              padding: 10px 20px;
+              background-color: #6c5ce7;
+              color: white;
+              border: none;
+              border-radius: 6px;
+              cursor: pointer;
+              font-size: 16px;
+              font-weight: 600;
+              transition: background-color 0.3s ease;
+            "
+          >
+            Завантажити ще
+          </button>
         </div>
       </main>
 
@@ -107,7 +186,9 @@
       <div id="toast-notification" class="toast hidden">
         <div class="toast-content">
           <span class="toast-icon">⚡</span>
-          <span id="toast-message">Демо-режим: Відображено офлайн-прев'ю новин.</span>
+          <span id="toast-message"
+            >Демо-режим: Відображено офлайн-прев'ю новин.</span
+          >
         </div>
         <button id="toast-close" class="toast-close-btn">&times;</button>
       </div>
@@ -118,21 +199,46 @@
           <!-- Brand column -->
           <div class="footer-brand">
             <div class="footer-logo">
-              <span>Logika Daily Feeds</span>
+              <div class="footer-logo">
+                <img class="logo-icon" src="logo.svg" alt="Logo" />
+              </div>
             </div>
-            <p class="footer-desc">Актуальні новини з усього світу — технології, бізнес, наука, спорт та багато іншого в одному місці.</p>
+            <p class="footer-desc">
+              Актуальні новини з усього світу — технології, бізнес, наука, спорт
+              та багато іншого в одному місці.
+            </p>
           </div>
 
           <!-- Categories column -->
           <div class="footer-col">
             <h5 class="footer-col-title">Категорії</h5>
             <ul class="footer-links">
-              <li><a href="#" class="footer-link" data-category="general">Головне</a></li>
-              <li><a href="#" class="footer-link" data-category="technology">Технології</a></li>
-              <li><a href="#" class="footer-link" data-category="economy">Бізнес</a></li>
-              <li><a href="#" class="footer-link" data-category="sports">Спорт</a></li>
-              <li><a href="#" class="footer-link" data-category="science">Наука</a></li>
-              <li><a href="#" class="footer-link" data-category="world">Світ</a></li>
+              <li>
+                <a href="#" class="footer-link" data-category="general"
+                  >Головне</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link" data-category="technology"
+                  >Технології</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link" data-category="economy"
+                  >Бізнес</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link" data-category="sports">Спорт</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link" data-category="science"
+                  >Наука</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link" data-category="world">Світ</a>
+              </li>
             </ul>
           </div>
 
@@ -140,11 +246,29 @@
           <div class="footer-col">
             <h5 class="footer-col-title">Більше тем</h5>
             <ul class="footer-links">
-              <li><a href="#" class="footer-link" data-category="politics">Політика</a></li>
-              <li><a href="#" class="footer-link" data-category="music">Музика</a></li>
-              <li><a href="#" class="footer-link" data-category="weather">Погода</a></li>
-              <li><a href="#" class="footer-link" data-category="health">Здоров'я</a></li>
-              <li><a href="#" class="footer-link" data-category="entertainment">Розваги</a></li>
+              <li>
+                <a href="#" class="footer-link" data-category="politics"
+                  >Політика</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link" data-category="music">Музика</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link" data-category="weather"
+                  >Погода</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link" data-category="health"
+                  >Здоров'я</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link" data-category="entertainment"
+                  >Розваги</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -155,7 +279,6 @@
           <span class="footer-copy footer-copy--muted">Всі права захищені</span>
         </div>
       </footer>
-
     </div>
 
     <script src="script.js"></script>
